@@ -1,0 +1,45 @@
+import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
+import styles from './Footer.module.css';
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className={styles.footer}>
+      <div className={`${styles.inner} container`}>
+        <div className={styles.top}>
+          <a href="#home" className={styles.logo}>
+            <span className={styles.logoText}>R</span>
+          </a>
+
+          <nav className={styles.nav}>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#learning">Learning</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div className={styles.social}>
+            <a href="https://github.com/rafy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <IconBrandGithub size={18} />
+            </a>
+            <a href="https://linkedin.com/in/rafy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <IconBrandLinkedin size={18} />
+            </a>
+            <a href="mailto:rafy@example.com" aria-label="Email">
+              <IconMail size={18} />
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.divider} />
+
+        <p className={styles.copyright}>
+          &copy; {year} Mohamed Rafy. Built with React and JavaScript.
+        </p>
+      </div>
+    </footer>
+  );
+}
