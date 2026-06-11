@@ -1,6 +1,12 @@
-import { IconArrowRight, IconDownload, IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
-import { useScrollReveal } from '../../hooks/useScrollReveal';
-import styles from './Hero.module.css';
+import {
+  IconArrowRight,
+  IconDownload,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   const ref = useScrollReveal();
@@ -10,12 +16,12 @@ export default function Hero() {
       <div className={`${styles.inner} container`}>
         <div ref={ref} className={`${styles.content} reveal`}>
           <span className={styles.greeting}>Hi, I'm</span>
-          <h1 className={styles.name}>Mohamed Rafy</h1>
+          <h1 className={styles.name}>Tho Rafy</h1>
           <p className={styles.title}>Full Stack Developer</p>
           <p className={styles.description}>
-            Full Stack Developer passionate about building practical web applications
-            with modern technologies. Currently seeking internship opportunities to
-            contribute, learn, and grow as a software engineer.
+            Full Stack Developer passionate about building practical web
+            applications with modern technologies. Currently seeking internship
+            opportunities to contribute, learn, and grow as a software engineer.
           </p>
 
           <div className={styles.actions}>
@@ -30,13 +36,23 @@ export default function Hero() {
           </div>
 
           <div className={styles.social}>
-            <a href="https://github.com/rafy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a
+              href="https://github.com/Rafy-Tho"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
               <IconBrandGithub size={20} />
             </a>
-            <a href="https://linkedin.com/in/rafy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/rafy-tho-bb874a347/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <IconBrandLinkedin size={20} />
             </a>
-            <a href="mailto:rafy@example.com" aria-label="Email">
+            <a href="mailto:rafytho30@gmail.com" aria-label="Email">
               <IconMail size={20} />
             </a>
           </div>

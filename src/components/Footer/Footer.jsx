@@ -1,5 +1,9 @@
-import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
-import styles from './Footer.module.css';
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -22,13 +26,23 @@ export default function Footer() {
           </nav>
 
           <div className={styles.social}>
-            <a href="https://github.com/rafy" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a
+              href="https://github.com/Rafy-Tho"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
               <IconBrandGithub size={18} />
             </a>
-            <a href="https://linkedin.com/in/rafy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/in/rafy-tho-bb874a347/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <IconBrandLinkedin size={18} />
             </a>
-            <a href="mailto:rafy@example.com" aria-label="Email">
+            <a href="mailto:rafytho30@gmail.com" aria-label="Email">
               <IconMail size={18} />
             </a>
           </div>
