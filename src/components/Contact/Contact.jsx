@@ -6,14 +6,57 @@ import {
 } from "@tabler/icons-react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./Contact.module.css";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 export default function Contact() {
   const ref = useScrollReveal();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [errors, setErrors] = useState({});
+  const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const newErrors = {};
+    if (!name.trim()) newErrors.name = "Name is required";
+    if (!email.trim()) newErrors.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Invalid email";
+    if (!message.trim()) newErrors.message = "Message is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    setSubmitting(true);
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+      console.log({ serviceId, templateId, publicKey });
+      await emailjs.send(
+        serviceId,
+        templateId,
+        { name, email, message },
+        publicKey,
+      );
+      setSent(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+      setErrors({ form: "Failed to send. Please try again later." });
+    } finally {
+      setSubmitting(false);
+    }
   };
-
   return (
     <section id="contact" className="section">
       <div className="container">
@@ -54,6 +97,12 @@ export default function Contact() {
           </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
+            {sent && (
+              <div className={styles.success}>
+                Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+            {errors.form && <div className={styles.error}>{errors.form}</div>}
             <div className={styles.field}>
               <label htmlFor="name" className={styles.labelText}>
                 Name
@@ -61,10 +110,15 @@ export default function Contact() {
               <input
                 id="name"
                 type="text"
-                className={styles.input}
+                className={`${styles.input}${errors.name ? ` ${styles.inputError}` : ""}`}
                 placeholder="Your name"
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
+              {errors.name && (
+                <span className={styles.fieldError}>{errors.name}</span>
+              )}
             </div>
             <div className={styles.field}>
               <label htmlFor="email" className={styles.labelText}>
@@ -73,10 +127,15 @@ export default function Contact() {
               <input
                 id="email"
                 type="email"
-                className={styles.input}
+                className={`${styles.input}${errors.email ? ` ${styles.inputError}` : ""}`}
                 placeholder="your@email.com"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
+              {errors.email && (
+                <span className={styles.fieldError}>{errors.email}</span>
+              )}
             </div>
             <div className={styles.field}>
               <label htmlFor="message" className={styles.labelText}>
@@ -84,15 +143,24 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
-                className={styles.textarea}
+                className={`${styles.textarea}${errors.message ? ` ${styles.inputError}` : ""}`}
                 rows={5}
                 placeholder="Your message..."
                 required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
+              {errors.message && (
+                <span className={styles.fieldError}>{errors.message}</span>
+              )}
             </div>
-            <button type="submit" className={styles.submit}>
+            <button
+              type="submit"
+              className={styles.submit}
+              disabled={submitting}
+            >
               <IconSend size={18} />
-              Send Message
+              {submitting ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>

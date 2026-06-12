@@ -60,9 +60,9 @@ export const projects = [
     lessons:
       "This project strengthened my full-stack development skills by teaching me how to design and implement a production-style learning management system. I gained experience in relational database design, session-based authentication, Stripe payment integration, scalable backend architecture, and managing complex relationships between courses, users, enrollments, progress tracking, and subscriptions.",
 
-    github: "https://github.com/your-username/learning-online-platform",
+    github: "https://github.com/Rafy-Tho/Learning_Online_Platform_Pern",
 
-    demo: "https://learning-online-platform-pern.onrender.com/",
+    demo: "https://learning-online-platform-pern.onrender.com",
 
     image: learningOnlinePlatformImage,
   },
@@ -136,9 +136,9 @@ export const projects = [
     lessons:
       "This project taught me how to design a scalable productivity application with a strong focus on UX and performance. I learned how to structure a full-stack architecture using React Query and Zustand together, how to build secure authentication with JWT cookies, and how to handle rich-text editing, autosave systems, and complex data relationships in MongoDB.",
 
-    github: "https://github.com/your-username/noteflow",
+    github: "https://github.com/Rafy-Tho/Notiva",
 
-    demo: "https://noteflow-demo.vercel.app",
+    demo: "https://notiva-new-2026.onrender.com",
 
     image: noteFlowImage,
 

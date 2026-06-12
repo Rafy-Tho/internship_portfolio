@@ -51,7 +51,7 @@ export default function Footer() {
         <div className={styles.divider} />
 
         <p className={styles.copyright}>
-          &copy; {year} Mohamed Rafy. Built with React and JavaScript.
+          &copy; {year} Tho Rafy. Built with React and JavaScript.
         </p>
       </div>
     </footer>
