@@ -7,7 +7,7 @@ import {
 } from "@tabler/icons-react";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 import styles from "./Hero.module.css";
-
+import resume from "../../assets/resume.pdf";
 export default function Hero() {
   const ref = useScrollReveal();
 
@@ -29,7 +29,7 @@ export default function Hero() {
               View Projects
               <IconArrowRight size={18} />
             </a>
-            <a href="/resume.pdf" className={styles.secondary} download>
+            <a href={resume} className={styles.secondary} download>
               <IconDownload size={18} />
               Download Resume
             </a>
