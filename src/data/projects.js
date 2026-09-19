@@ -62,7 +62,7 @@ export const projects = [
 
     github: "https://github.com/Rafy-Tho/Learning_Online_Platform_Pern",
 
-    demo: "https://learning-online-platform-pern.onrender.com",
+    demo: "https://learnshpere.rafytho.com",
 
     image: learningOnlinePlatformImage,
   },
