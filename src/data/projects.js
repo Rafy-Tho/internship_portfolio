@@ -138,7 +138,7 @@ export const projects = [
 
     github: "https://github.com/Rafy-Tho/Notiva",
 
-    demo: "https://notiva-new-2026.onrender.com",
+    demo: "https://noteflow.rafytho.com",
 
     image: noteFlowImage,
 
@@ -148,6 +148,6 @@ export const projects = [
     architecture: "REST API",
     authentication: "JWT (httpOnly Cookies)",
     editor: "TipTap Rich Text Editor",
-    deployment: "Vercel + Render",
+    deployment: "Vercel + Hostinger",
   },
 ];
