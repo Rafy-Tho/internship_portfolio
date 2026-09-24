@@ -1,12 +1,12 @@
-import noteFlowImage from "../assets/noteflow.png";
-import learningOnlinePlatformImage from "../assets/elearning.png";
+import NoteFlow from "../assets/noteflow.png";
+import LearnSphere from "../assets/elearning.png";
 
 export const projects = [
   {
     id: 2,
-    title: "Learning Online Platform",
+    title: "LearnSphere",
     shortDesc:
-      "A full-stack e-learning platform with courses, quizzes, progress tracking, reviews, and Stripe subscriptions.",
+      "A full-stack e-learning platform with courses, quizzes, progress tracking, reviews, and Stripe Payment integration.",
 
     overview:
       "A comprehensive online learning platform built with React, Node.js, Express, and PostgreSQL. Users can browse courses, enroll in learning programs, complete lessons and quizzes, track their progress, leave reviews, and access premium content through subscription plans. The platform follows a scalable architecture with structured course content management, secure session-based authentication, and Stripe-powered payment processing.",
@@ -21,7 +21,6 @@ export const projects = [
       "Subscription plans with Stripe integration",
       "User dashboard for recent and completed courses",
       "Password reset and email notification system",
-      "Role-based access for Learners, Instructors, and Admins",
     ],
 
     techStack: [
@@ -37,8 +36,7 @@ export const projects = [
       "Express Session",
       "Stripe",
       "Cloudinary",
-      "Nodemailer",
-      "Resend",
+      "Hostinger Email",
     ],
 
     challenges: [
@@ -60,11 +58,11 @@ export const projects = [
     lessons:
       "This project strengthened my full-stack development skills by teaching me how to design and implement a production-style learning management system. I gained experience in relational database design, session-based authentication, Stripe payment integration, scalable backend architecture, and managing complex relationships between courses, users, enrollments, progress tracking, and subscriptions.",
 
-    github: "https://github.com/Rafy-Tho/Learning_Online_Platform_Pern",
+    github: "https://github.com/Rafy-Tho/LearnSphere",
 
     demo: "https://learnshpere.rafytho.com",
 
-    image: learningOnlinePlatformImage,
+    image: LearnSphere,
   },
   {
     id: 3,
@@ -74,7 +72,7 @@ export const projects = [
       "A modern full-stack note-taking app with rich-text editing, notebooks, tags, autosave, search, and authentication.",
 
     overview:
-      "NoteFlow is a full-stack note-taking platform built with React 19, Express 5, and MongoDB Atlas. It provides a rich-text editing experience using TipTap, along with features like notebooks, tags, pin/favorite/archive system, full-text search, autosave, and a command palette. The app supports secure authentication with JWT cookies, avatar uploads, password reset flows, and a clean UI designed for productivity.",
+      "NoteFlow is a full-stack note-taking platform built with React 19, Express 5, and Postgres. It provides a rich-text editing experience using TipTap, along with features like notebooks, tags, pin/favorite/archive system, full-text search, autosave, and a command palette. The app supports secure authentication with session cookies, avatar uploads, password reset flows, and a clean UI designed for productivity.",
 
     features: [
       "Rich-text editor with TipTap",
@@ -84,7 +82,7 @@ export const projects = [
       "Command palette (⌘K) for quick actions",
       "Full-text note search with filters",
       "Dark/light theme with persistence",
-      "Secure authentication with JWT httpOnly cookies",
+      "Secure authentication with session cookies",
       "Password reset and email verification system",
       "Avatar upload and profile management",
       "Soft delete and note recovery system",
@@ -102,8 +100,9 @@ export const projects = [
       "Radix UI",
       "Node.js",
       "Express 5",
-      "MongoDB Atlas",
-      "Mongoose",
+      "PostgreSQL",
+      "Prisma ORM",
+      "connect-pg-simple",
       "JWT",
       "bcrypt",
       "express-validator",
@@ -111,7 +110,7 @@ export const projects = [
       "cookie-parser",
       "multer",
       "Cloudinary",
-      "Brevo SMTP",
+      "Hostinger Email",
       "DOMPurify",
       "sanitize-html",
       "JSZip",
@@ -119,34 +118,34 @@ export const projects = [
 
     challenges: [
       "Designing a scalable note system with notebooks, tags, and soft delete functionality",
-      "Implementing secure JWT authentication with httpOnly cookies and session restoration",
+      "Implementing secure session-based authentication with httpOnly cookies and session restoration",
       "Building a rich-text editor with autosave and content sanitization",
       "Managing complex client state with Zustand and server state with React Query",
       "Ensuring performance with large note datasets and client-side search filtering",
     ],
 
     solutions: [
-      "Used a modular MongoDB schema with relations between users, notes, notebooks, and tags",
-      "Implemented secure JWT authentication stored in httpOnly cookies with verify endpoint",
+      "Used a modular PostgreSQL schema with relations between users, notes, notebooks, and tags",
+      "Implemented secure session-based authentication with express-session and connect-pg-simple",
       "Integrated TipTap editor with DOMPurify and autosave debounce system",
       "Separated state layers: Zustand for UI/auth, React Query for server state",
       "Optimized search and filtering logic with indexed queries and client-side memoization",
     ],
 
     lessons:
-      "This project taught me how to design a scalable productivity application with a strong focus on UX and performance. I learned how to structure a full-stack architecture using React Query and Zustand together, how to build secure authentication with JWT cookies, and how to handle rich-text editing, autosave systems, and complex data relationships in MongoDB.",
+      "This project taught me how to design a scalable productivity application with a strong focus on UX and performance. I learned how to structure a full-stack architecture using React Query and Zustand together, how to build secure authentication with session cookies, and how to handle rich-text editing, autosave systems, and complex data relationships in PostgreSQL.",
 
-    github: "https://github.com/Rafy-Tho/Notiva",
+    github: "https://github.com/Rafy-Tho/NoteFlow",
 
     demo: "https://noteflow.rafytho.com",
 
-    image: noteFlowImage,
+    image: NoteFlow,
 
     status: "Completed",
     type: "Full Stack",
-    database: "MongoDB Atlas",
+    database: "PostgreSQL",
     architecture: "REST API",
-    authentication: "JWT (httpOnly Cookies)",
+    authentication: "Session Cookies",
     editor: "TipTap Rich Text Editor",
     deployment: "Vercel + Hostinger",
   },
